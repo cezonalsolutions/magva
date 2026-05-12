@@ -479,7 +479,6 @@ html,body{
 }
 /* Video */
 /* Simple Video */
-/* Simple Video */
 .logo-video{
   width:220px;
   height:auto;
@@ -488,16 +487,21 @@ html,body{
 
   margin:30px auto 0;
 
-  transform:translateX(-18px); /* move little left */
+  transform:translateX(-18px);
 
   object-fit:contain;
 
-  background:none;
+  background:transparent !important;
+
   border:none;
   border-radius:0;
   box-shadow:none;
 
   pointer-events:none;
+
+  mix-blend-mode:screen;
+
+  isolation:isolate;
 }
 
 /* Mobile */
@@ -3226,8 +3230,28 @@ html,body{
   
 <!-- Welcome -->
 
-<video class="logo-video" autoplay muted loop playsinline>
-  <source src="img/video2.webm" type="video/webm">
+<video 
+  class="logo-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  webkit-playsinline
+  preload="auto"
+>
+
+  <!-- iPhone Saxfari -->
+  <source 
+    src="img/video2.mov"
+    type='video/mp4; codecs="hvc1"'
+  >
+
+  <!-- Chrome / Android -->
+  <source 
+    src="img/video2.webm"
+    type="video/webm"
+  >
+
 </video>
 
 <div class="brand-text">
